@@ -1,12 +1,13 @@
 #!/bin/bash
+# APP_Name=streamlit
+APP_PID=$(pgrep streamlit)
 
-APP_PID=$(pgrep -f streamlit)
-
-if [ -z "$APP_PID" ]; then
+if [ -z $APP_PID ]
+then
   echo "Application is not running"
 else
-  echo "Killing streamlit processes: $APP_PID"
-  echo "$APP_PID" | xargs -r kill -9
+  echo "Kill -9 $APP_PID"
+  kill -9 $APP_PID
   sleep 5
 fi
 
