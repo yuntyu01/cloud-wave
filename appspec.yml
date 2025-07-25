@@ -7,7 +7,7 @@ files:
 file_exists_behavior: OVERWRITE
 hooks:
   ApplicationStop:
-    #- location: scripts/stop_streamlit.sh
+    - location: scripts/stop_streamlit.sh
     # - location: scripts/stop_applications.sh
       timeout: 10
   ApplicationStart:
